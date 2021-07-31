@@ -1,0 +1,6 @@
+{
+  "token": "",
+  "prefix": "!",
+  "defaultCommandCooldown" : 1,
+  "mongodb_srv": ""
+}
