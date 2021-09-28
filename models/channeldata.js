@@ -14,6 +14,7 @@ const channeldataSchema = mongoose.Schema({
     readyannchannel: String,
     resultannchannel: String,
     gamenb: Number,
+    picking: {type: Boolean, default: false},
 });
 
 module.exports = mongoose.model("Channeldata", channeldataSchema);

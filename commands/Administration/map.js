@@ -10,6 +10,7 @@ module.exports = {
     cooldown: 2,
     usage: "map",
     description: "TestMap",
+    memberpermissions: ["MANAGE_ROLES"],
     run: async (client, message, args, user, text, prefix) => {
     try{
         let channelL = message.channel.name;

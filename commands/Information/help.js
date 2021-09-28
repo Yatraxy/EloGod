@@ -8,6 +8,7 @@ module.exports = {
     cooldown: 4,
     usage: "help [Command]",
     description: "Returns all Commmands, or one specific command",
+    memberpermissions: ["MANAGE_ROLES"],
     run: async (client, message, args, user, text, prefix) => {
       try{
         if (args[0]) {

@@ -12,6 +12,7 @@ module.exports = {
     cooldown: 2,
     usage: "forceleave",
     description: "TestForceLeave",
+    memberpermissions: ["MANAGE_CHANNELS"],
     run: async (client, message, args, user, text, prefix) => {
     try{
         let user = message.mentions.members.first();
@@ -71,7 +72,7 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            //.setDescription(`\`\`\`${e.stack}\`\`\``)
         );
     }
   }

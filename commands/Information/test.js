@@ -12,6 +12,7 @@ module.exports = {
     cooldown: 2,
     usage: "test",
     description: "Test",
+    memberpermissions: ["MANAGE_ROLES"],
     run: async (client, message, args, user, text, prefix) => {
     try{
         let player;
@@ -42,7 +43,7 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            //.setDescription(`\`\`\`${e.stack}\`\`\``)
         );
     }
   }

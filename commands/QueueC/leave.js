@@ -24,7 +24,7 @@ module.exports = {
                                 let isQueue = chaData.playerIQ.indexOf(plaData.userID);
 
                                 if (isQueue != -1) {
-                                    if (chaData.playerIQN <= chaData.playerPT) {
+                                    if (chaData.playerIQN < chaData.playerPT) {
                                         chaData.playerIQ.pull(plaData.userID)
                                         chaData.playerIQN --;
                                         chaData.save()
@@ -71,7 +71,7 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            //.setDescription(`\`\`\`${e.stack}\`\`\``)
         );
     }
   }

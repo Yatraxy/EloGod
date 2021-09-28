@@ -12,8 +12,10 @@
   "dependencies": {
     "@keyv/sqlite": "^2.0.2",
     "ascii-table": "0.0.9",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
+    "json2csv": "^5.0.6",
     "keyv": "^4.0.3",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.13",
     "sqlite3": "^5.0.2"
   },

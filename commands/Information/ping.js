@@ -8,6 +8,7 @@ module.exports = {
     cooldown: 2,
     usage: "ping",
     description: "Gives you information on how fast the Bot can respond to you",
+    memberpermissions: ["MANAGE_ROLES"],
     run: async (client, message, args, user, text, prefix) => {
     try{
       message.channel.send(new MessageEmbed()

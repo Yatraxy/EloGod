@@ -3,6 +3,8 @@ const Discord = require("discord.js"); //this is the official discord.js wrapper
 const colors = require("colors"); //this Package is used, to change the colors of our Console! (optional and doesnt effect performance)
 const fs = require("fs"); //this package is for reading files and getting their inputs
 const mongoose = require("mongoose");
+const Usereventdata = require("./models/usereventdata.js");
+const { findEventPlayer } = require("./handlers/rfunctions.js");
 
 /*mongoose.connect('mongodb://localhost:27017/Ranked', {
   useNewUrlParser: true,
@@ -43,8 +45,23 @@ mongoose.connect(require("./botconfig/config.json").mongodb_srv, {
   console.log(err);
 });
 
-/*client.on('ready', () => {
-  console.log('bot logged in')
-})*/
-//login into the bot
+client.on('message', async (msg) => {
+  let playEv
+  if (msg.channel.id === '877735273356738600') {
+    let mesgName = msg.content.split(' ')
+    findEventPlayer(msg.author.id).then(pla => {
+      playEv = msg.author
+      if (!pla) {
+        const newUsereventdata = new Usereventdata({
+          _id: mongoose.Types.ObjectId(),
+          nickname: mesgName.join(" "),
+          userID: playEv.id,
+          dctag: playEv.tag,
+        })
+        newUsereventdata.save()
+      }
+    })
+  }
+})
+
 client.login(require("./botconfig/config.json").token);
